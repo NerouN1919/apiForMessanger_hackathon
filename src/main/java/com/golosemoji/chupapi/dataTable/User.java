@@ -23,6 +23,10 @@ public class User {
     private List<Message> messagesFrom;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "userTo")
     private List<Message> messagesTo;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "userFrom")
+    private List<MessageAudio> messagesAudioFrom;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "userTo")
+    private List<MessageAudio> messagesAudioTo;
     public void addMessageFrom(Message message){
         if(messagesFrom == null){
             messagesFrom = new ArrayList<>();
@@ -35,6 +39,20 @@ public class User {
             messagesTo = new ArrayList<>();
         }
         messagesTo.add(message);
+        message.setUserTo(this);
+    }
+    public void addMessageFrom(MessageAudio message){
+        if(messagesAudioFrom == null){
+            messagesAudioFrom = new ArrayList<>();
+        }
+        messagesAudioFrom.add(message);
+        message.setUserFrom(this);
+    }
+    public void addMessageTo(MessageAudio message){
+        if(messagesAudioTo == null){
+            messagesAudioTo = new ArrayList<>();
+        }
+        messagesAudioTo.add(message);
         message.setUserTo(this);
     }
     public User() {

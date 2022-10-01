@@ -1,9 +1,11 @@
 package com.golosemoji.chupapi.starting;
 
 import com.golosemoji.chupapi.dataTable.Message;
+import com.golosemoji.chupapi.dataTable.MessageAudio;
 import com.golosemoji.chupapi.dataTable.User;
-import com.golosemoji.chupapi.exceptions.Info;
 import com.golosemoji.chupapi.exceptions.NoSuchIn;
+import com.golosemoji.chupapi.returns.GetMes;
+import com.golosemoji.chupapi.returns.Login;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -12,22 +14,11 @@ import javax.persistence.EntityManager;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.stream.Stream;
 
 @Repository
 public class DAO {
     @Autowired
     private EntityManager entityManager;
-
-    public void test(){
-        Session session = entityManager.unwrap(Session.class);
-        User user = new User("aboba", "login", "parol", "ya aboba");
-        java.util.Date utilDate = new java.util.Date();
-        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
-        Message message = new Message("privet", sqlDate);
-        user.addMessageTo(message);
-        session.save(user);
-    }
     public User registration(User user){
         Session session = entityManager.unwrap(Session.class);
         if(isIn(user)){
@@ -76,6 +67,24 @@ public class DAO {
         endList.addAll(messageListSec);
         return endList;
     }
-
-
+    public MessageAudio sendAudio(MessageAudio messageAudio){
+        Session session = entityManager.unwrap(Session.class);
+        messageAudio.setDate(new Date());
+        User userFrom = session.get(User.class, messageAudio.getUserFrom().getId());
+        User userTo = session.get(User.class, messageAudio.getUserTo().getId());
+        userFrom.addMessageFrom(messageAudio);
+        userTo.addMessageTo(messageAudio);
+        session.update(userFrom);
+        session.update(userTo);
+        return messageAudio;
+    }
+    public List<MessageAudio> getAudioMessage(GetMes getMes){
+        Session session = entityManager.unwrap(Session.class);
+        List<MessageAudio> messageList = session.createQuery("from MessageAudio where to_user = '" + getMes.getTo() + "' and from_user = '" + getMes.getFrom() + "'").getResultList();
+        List<MessageAudio> messageListSec = session.createQuery("from MessageAudio where to_user = '" + getMes.getFrom() + "' and from_user = '" + getMes.getTo() + "'").getResultList();
+        List<MessageAudio> endList = new ArrayList<>();
+        endList.addAll(messageList);
+        endList.addAll(messageListSec);
+        return endList;
+    }
 }
