@@ -1,5 +1,5 @@
 # javaChatApi
-api for chats for тот самый хакатон
+## API for messenger with ВОКОМОДЖИ
 # Structure of DataBase:  
 ![изображение](https://user-images.githubusercontent.com/99546572/193435092-f8c37e19-0198-4a44-970c-a30ad3a3c766.png)  
 # Список доступных HTTP запросов:  
