@@ -44,11 +44,11 @@ public class Controller {
     public Message sendMessage(@RequestBody Message message){
         return service.sendMessage(message);
     }
-    @GetMapping("get")
+    @PostMapping("get")
     public List<Message> getMessage(@RequestBody GetMes getMes){
         return service.getMessage(getMes);
     }
-    @GetMapping("/downloadFile/{fileCode}")
+    @PostMapping("/downloadFile/{fileCode}")
     public ResponseEntity<?> downloadFile(@PathVariable("fileCode") String fileCode) {
         FileDownloadUtil downloadUtil = new FileDownloadUtil();
 
@@ -92,7 +92,7 @@ public class Controller {
     public MessageAudio sendAudio(@RequestBody MessageAudio messageAudio){
         return service.sendAudio(messageAudio);
     }
-    @GetMapping("/getAudio")
+    @PostMapping("/getAudio")
     public List<MessageAudio> getAudio(@RequestBody GetMes getMes){
         return service.getAudioMessage(getMes);
     }
