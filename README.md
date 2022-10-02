@@ -1,5 +1,7 @@
 # javaChatApi
 api for chats for тот самый хакатон
+# Structure of DataBase:  
+![изображение](https://user-images.githubusercontent.com/99546572/193435092-f8c37e19-0198-4a44-970c-a30ad3a3c766.png)  
 # Список доступных HTTP запросов:  
 ![изображение](https://user-images.githubusercontent.com/99546572/193434175-76ab1366-ef37-4357-a7a9-3a14abb67456.png)  
 ![изображение](https://user-images.githubusercontent.com/99546572/193434188-0334aaf0-2834-420f-902f-a73de3f30910.png)  
