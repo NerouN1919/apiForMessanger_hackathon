@@ -36,7 +36,7 @@ public class Controller {
     public User registration(@RequestBody User user){
         return service.registration(user);
     }
-    @GetMapping("/log")
+    @PostMapping("/log")
     public Login login(@RequestBody User user){
         return service.login(user);
     }
