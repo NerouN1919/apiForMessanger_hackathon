@@ -3,7 +3,7 @@ api for chats for тот самый хакатон
 # Список доступных HTTP запросов:  
 ![изображение](https://user-images.githubusercontent.com/99546572/193434175-76ab1366-ef37-4357-a7a9-3a14abb67456.png)  
 ![изображение](https://user-images.githubusercontent.com/99546572/193434188-0334aaf0-2834-420f-902f-a73de3f30910.png)  
-#Примеры HTTP запросов:  
+# Примеры HTTP запросов:  
 ## http://89.208.208.129:8080/api/reg  
 ![изображение](https://user-images.githubusercontent.com/99546572/193434297-feb5b413-24de-4c93-8356-38712d3373cb.png) 
 ## http://89.208.208.129:8080/api/log  
