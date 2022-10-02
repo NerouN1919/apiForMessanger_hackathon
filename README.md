@@ -24,6 +24,10 @@ api for chats for тот самый хакатон
 ![изображение](https://user-images.githubusercontent.com/99546572/193434704-c356de59-8882-4b3d-a1e4-f3cb79328ea9.png)  
 ## http://4papibamboni.duckdns.org:8080/api/downloadFile/{filePath}  
 ![изображение](https://user-images.githubusercontent.com/99546572/193434770-87f43ed6-3d7e-4801-aae9-b7f387bbd322.png)  
+# Команда - ЧУПАПИБАМБОНИ
+- Татьяна Лебедева - Flutter разработчик
+- Сергей Свириденко - Backend разработчик
+- Тампио Илья - ML-разработчик и менеджер
 
 
 
