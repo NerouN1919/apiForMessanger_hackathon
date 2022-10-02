@@ -6,7 +6,7 @@ api for chats for тот самый хакатон
 ![изображение](https://user-images.githubusercontent.com/99546572/193434175-76ab1366-ef37-4357-a7a9-3a14abb67456.png)  
 ![изображение](https://user-images.githubusercontent.com/99546572/193434188-0334aaf0-2834-420f-902f-a73de3f30910.png)  
 # Примеры HTTP запросов:  
-## http://[89.208.208.129:8080](http://4papibamboni.duckdns.org:8080)/api/reg  
+## http://http://4papibamboni.duckdns.org:8080/api/reg  
 ![изображение](https://user-images.githubusercontent.com/99546572/193434297-feb5b413-24de-4c93-8356-38712d3373cb.png) 
 ## http://89.208.208.129:8080/api/log  
 ![изображение](https://user-images.githubusercontent.com/99546572/193434465-5b955681-8f65-4400-81bc-bef1ebf21753.png)  
